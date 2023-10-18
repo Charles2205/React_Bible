@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import axios from 'axios'
+
+import { Index } from './Index'
+
+
+const ApiRequest =()=>{
+  const [post,setPost] = useState([])
+  useEffect(()=>{
+    async function req(){
+  const res= await axios.get('https://dummyjson.com/posts')
+    console.log(res.data.posts);
+    }
+    req()
+  },[])
+
+
+
+
+
+
+
+  return(<>
+  
+  
+  </>)
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+//  <Index/>
+  <ApiRequest/>
 )
