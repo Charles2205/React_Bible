@@ -7,21 +7,26 @@ import "./content.css";
 import { useEffect, useState } from "react";
 
 const Search = () => {
-  const [input, setInput] = useState("");
+  const [inputs, setInput] = useState("");
+  const [quotations,setQuotations] =useState([])
 
   useEffect(() => {
     async function requestData() {
       try {
-        if (input.trim().length > 0) {
-          const res = await axios.get(`https://bible-api.com/${input}`);
-          console.log(res.data);
+        if (inputs.trim().length > 0) {
+            console.log(inputs);
+          const res = await axios.get(`https://bible-api.com/${inputs}`);
+          console.log(res);
+          setQuotations([res.data])
+          console.log(quotations);
         }
       } catch (error) {
         console.log(error);
       }
     }
     requestData();
-  }, [input]);
+  }, [inputs]);
+//   console.log(quotations);
 
   // setting up input state
   const onChangeInput = (e) => {
@@ -29,7 +34,6 @@ const Search = () => {
   };
   // click event
   const btnSearch = () => {
-    console.log(input);
   };
   return (
     <>
@@ -47,13 +51,19 @@ const Search = () => {
               aria-label="Example text with button addon"
               aria-describedby="basic-addon1"
               onChange={onChangeInput}
-              value={input}
+              value={inputs}
             />
           </InputGroup>
 
           <div className="content">
-            <span className="Ref">Ref</span> <br />
-            <span className="Verse">Verse</span>
+            {quotations.map((quotation)=>(
+                
+                <div key={inputs}>
+                <span className="Ref">{quotation.text}</span><br />
+                <span className="Verse">Verse</span>
+                </div>
+
+            ))}
           </div>
         </Container>
       </center>
