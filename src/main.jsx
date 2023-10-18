@@ -6,11 +6,11 @@ import { Index } from './Index'
 
 
 const ApiRequest =()=>{
-  const [post,setPost] = useState([])
+  const [posts,setPost] = useState([])
   useEffect(()=>{
     async function req(){
   const res= await axios.get('https://dummyjson.com/posts')
-    console.log(res.data.posts);
+    setPost(res.data.posts);
     }
     req()
   },[])
@@ -22,8 +22,14 @@ const ApiRequest =()=>{
 
 
   return(<>
-  
-  
+
+      {posts.map((post)=>(
+        <div key={post.id}>
+        <span>{post.id}-</span> 
+        <span>{post.title}</span>
+        <br />
+        </div>
+      ))}
   </>)
 }
 
