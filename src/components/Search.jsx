@@ -24,7 +24,7 @@ const Search = () => {
         console.log(error);
       }
     }
-    requestData();
+    requestData()
   }, [inputs]);
 //   console.log(quotations);
 
@@ -33,7 +33,11 @@ const Search = () => {
     setInput(e.target.value);
   };
   // click event
-  const btnSearch = () => {
+  const btnSearch = async() => {
+    const res = await axios.get(`https://bible-api.com/${inputs}`);
+    console.log(res);
+    setQuotations([res.data])
+    console.log(quotations); 
   };
   return (
     <>
