@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 const Search = () => {
   const [inputs, setInput] = useState("");
   const [quotations,setQuotations] =useState([])
-
+  
+  
   useEffect(() => {
     async function requestData() {
       try {
@@ -20,10 +21,13 @@ const Search = () => {
           setQuotations([res.data])
           console.log(quotations);
         }
+        
       } catch (error) {
         console.log(error);
       }
+
     }
+    
     requestData()
   }, [inputs]);
 //   console.log(quotations);
@@ -34,7 +38,7 @@ const Search = () => {
   };
   // click event
   const btnSearch = async() => {
-    const res = await axios.get(`https://bible-api.com/${inputs}`);
+    const res = await axios.get(`https://bible-api.com/+${inputs}`);
     console.log(res);
     setQuotations([res.data])
     console.log(quotations); 
@@ -63,8 +67,8 @@ const Search = () => {
             {quotations.map((quotation)=>(
                 
                 <div key={inputs}>
-                <span className="Ref">{quotation.text}</span><br />
-                <span className="Verse">Verse</span>
+                <span className="Ref">{quotation.reference}</span><br />
+                <span className="Verse">{quotation.text}</span>
                 </div>
 
             ))}
