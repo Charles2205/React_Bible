@@ -26,12 +26,18 @@ const Search = () => {
       } catch (error) {
         console.log(error);
       }
-
+     
     }
-    
-    requestData()
+    const timer = setTimeout(()=>{
+      requestData()
+    },1000)
+    return ()=>clearTimeout(timer)
   }, [inputs]);
 //   console.log(quotations);
+// setting up debouncing
+ 
+
+
 
   // setting up input state
   const onChangeInput = (e) => {
@@ -76,7 +82,7 @@ const Search = () => {
           </div> */}
 
           <Card>
-      <Card.Body>
+      <Card.Body key={quotations.reference}>
       {quotations.map((quotation)=>(
                <blockquote className="blockquote Ref mb-0">
                <p>
