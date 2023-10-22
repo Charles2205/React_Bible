@@ -10,4 +10,6 @@ Currently, two official plugins are available:
 
 
 # Screenshots
-<img src="https://github.com/Charles2205/Assignments/blob/main/assignment-1/src/active-states.jpg" alt="Home Page">
+<img src="https://github.com/Charles2205/React_Bible/blob/cbb58faad2dd29f25364490987bdd08ea56ea978/Shots/1.png" alt="Home Page">
+
+<img src="https://github.com/Charles2205/React_Bible/blob/cbb58faad2dd29f25364490987bdd08ea56ea978/Shots/2.png" alt="Home Page with Verse">
