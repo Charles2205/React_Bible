@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Card from 'react-bootstrap/Card';
 import "./content.css";
 import { useEffect, useState } from "react";
 
@@ -63,7 +64,7 @@ const Search = () => {
             />
           </InputGroup>
 
-          <div className="content">
+          {/* <div className="content">
             {quotations.map((quotation)=>(
                 
                 <div key={inputs}>
@@ -72,11 +73,32 @@ const Search = () => {
                 </div>
 
             ))}
-          </div>
+          </div> */}
+
+          <Card>
+      <Card.Body>
+      {quotations.map((quotation)=>(
+               <blockquote className="blockquote Ref mb-0">
+               <p>
+                 {' '}
+                 {quotation.reference}
+                 
+                 {' '}
+               </p>
+               <footer className="blockquote-footer Verse">
+                {quotation.text}
+               </footer>
+             </blockquote>
+            ))}
+      </Card.Body>
+    </Card>
         </Container>
+     
       </center>
     </>
   );
 };
 
 export default Search;
+
+
