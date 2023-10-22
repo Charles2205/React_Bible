@@ -20,9 +20,12 @@ Currently, two official plugins are available:
 # Contributing
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these guidelines:
 
-Fork the repository and create a new branch for your feature or bug fix.
+Fork the repository and create a new branch for your feature or bug fix.    
+
 Make your changes and ensure that the code passes all tests.
+
 Submit a pull request with a clear description of your changes.
+
 If you find any bugs or have suggestions for improvements, please open an issue on the GitHub repository.
 
 
