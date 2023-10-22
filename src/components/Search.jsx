@@ -20,7 +20,7 @@ const Search = () => {
           const res = await axios.get(`https://bible-api.com/${inputs}`);
           console.log(res);
           setQuotations([res.data])
-          console.log(quotations);
+          // console.log(quotations);
         }
         
       } catch (error) {
@@ -48,7 +48,7 @@ const Search = () => {
     const res = await axios.get(`https://bible-api.com/+${inputs}`);
     console.log(res);
     setQuotations([res.data])
-    console.log(quotations); 
+    // console.log(quotations); 
   };
   return (
     <>
@@ -82,9 +82,9 @@ const Search = () => {
           </div> */}
 
           <Card>
-      <Card.Body key={quotations.reference}>
+      <Card.Body>
       {quotations.map((quotation)=>(
-               <blockquote className="blockquote Ref mb-0">
+               <blockquote key={quotation.reference} className="blockquote Ref mb-0">
                <p>
                  {' '}
                  {quotation.reference}
