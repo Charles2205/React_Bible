@@ -12,7 +12,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 const Search = () => {
-  const [inputs, setInput] = useState("");
+  const [inputs, setInput] = useState(null);
   const [quotations, setQuotations] = useState([]);
 
   useEffect(() => {
