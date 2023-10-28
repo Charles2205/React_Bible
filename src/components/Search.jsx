@@ -4,7 +4,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Card from "react-bootstrap/Card";
-// import "./content.css";
+
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { useEffect, useState } from "react";
@@ -58,7 +58,6 @@ const Search = () => {
     console.log(res);
     setQuotations([res.data]);
   };
-  // selectTranslations()
   return (
     <>
       <center>
@@ -85,11 +84,6 @@ const Search = () => {
                 Single Verse (Eg: John 3:16) <br />
                 Abbreviated Book Name <br /> (Eg:jn 3:16) <br />
                 Verse Range <br />(Eg:Romans 12:1-2)
-
-              
-              
-              
-              
               </Tooltip>}
             >
               <Button 
@@ -118,18 +112,6 @@ const Search = () => {
               </Dropdown.Item>
             </DropdownButton>
           </InputGroup>
-
-          {/* <div className="content">
-            {quotations.map((quotation)=>(
-                
-                <div key={inputs}>
-                <span className="Ref">{quotation.reference}</span><br />
-                <span className="Verse">{quotation.text}</span>
-                </div>
-
-            ))}
-          </div> */}
-
           <Card>
             <Card.Body>
               {quotations.map((quotation) => (
